@@ -1,0 +1,1 @@
+/media/azzar/betha/Downloads/project/ui/weather forecast/script.js
