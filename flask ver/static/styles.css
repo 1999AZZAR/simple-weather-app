@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #0000A8;
+    --secondary-color: #0811ac;
+    --tertiary-color: #1029b0;
+    --quaternary-color: #1841b4;
+    --quinary-color: #2059b8;
+    --senary-color: #2871bc;
+    --septenary-color: #3089c0;
+    --octonary-color: #38a1c4;
+    --nonary-color: #40b9c8;
+    --denary-color: #48D1CC;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    max-width: 88vw;
+    height: 90vh;
+    width: 53rem;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.user-input {
+    margin-bottom: 30px;
+}
+
+.user-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.user-input input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.user-input button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.user-input button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    position: sticky;
+    gap: 1rem;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 10;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+}
+
+.tab-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.tab-button.active {
+    background-color: var(--tertiary-color);
+}
+
+.tab-content {
+    display: none;
+    max-height: 70vh; /* Adjust as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+.weather-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+h2 {
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+h2 i {
+    margin-right: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #666;
+}
+
+p i {
+    margin-right: 10px;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid #eee;
+    margin: 15px 0;
+}
+
+/* Existing CSS... */
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.loading.hidden {
+    display: none;
+}
+
+/* Spinner Style */
+.fas.fa-spinner {
+    margin-right: 10px;
+}
+
+/* Existing styles */
+
+#input-area {
+    margin-bottom: 20px;
+}
+
+#input-area.hidden {
+    display: none;
+}
+
+#loading {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    #input-area {
+        margin-bottom: 15px;
+    }
+
+    #loading {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .weather-section {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
