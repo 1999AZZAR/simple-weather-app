@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="control-panel">
+            <h1 id="header">Weather App</h1>
+            <div id="input-area" class="user-input">
+                <div class="input-group">
+                    <label for="latitude" data-translate="Latitude">Latitude</label>
+                    <input type="text" id="latitude" placeholder="e.g., -7.1167">
+                </div>
+                <div class="input-group">
+                    <label for="longitude" data-translate="Longitude">Longitude</label>
+                    <input type="text" id="longitude" placeholder="e.g., 112.4167">
+                </div>
+                <div class="input-group full-width">
+                    <label for="timezone" data-translate="Time Zone">Time Zone</label>
+                    <input type="text" id="timezone" placeholder="e.g., Asia/Bangkok">
+                </div>
+                <div class="button-group full-width">
+                    <button id="fetch-weather-button" data-translate="Fetch Weather">Fetch Weather</button>
+                    <button id="use-location-button" data-translate="Use My Location">Use My Location</button>
+                </div>
+            </div>
+            <div class="tabs">
+                <button class="tab-button active" data-target="current" data-translate="Current">Current</button>
+                <button class="tab-button" data-target="hourly" data-translate="Hourly">Hourly</button>
+                <button class="tab-button" data-target="daily" data-translate="Daily">Daily</button>
+            </div>
+            <div class="theme-switcher-wrapper">
+                <button id="language-toggle" data-lang="en">EN</button>
+                <button id="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+        <div class="result-panel">
+            <div id="loading" class="loading hidden">
+                <div class="skeleton-loader">
+                    <div class="skeleton-h2"></div>
+                    <div class="skeleton-p"></div>
+                    <div class="skeleton-p"></div>
+                    <div class="skeleton-p"></div>
+                    <div class="card-skeleton-wrapper">
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="current" class="tab-content">
+                <div class="weather-section">
+                    <h2 data-translate="Current Weather"><i class="fas fa-cloud-sun"></i> Current Weather</h2>
+                    <p id="current-time" data-translate="Local Time">Local Time</p>
+                    <p id="current-temperature" data-translate="Temperature">Temperature</p>
+                    <p id="current-apparent-temperature" data-translate="Feels Like">Feels Like</p>
+                    <p id="current-humidity" data-translate="Humidity">Humidity</p>
+                    <p id="current-precipitation" data-translate="Precipitation">Precipitation</p>
+                    <p id="current-pressure" data-translate="Pressure">Pressure</p>
+                    <p id="current-wind-speed" data-translate="Wind Speed">Wind Speed</p>
+                    <p id="current-wind-direction" data-translate="Wind Direction">Wind Direction</p>
+                    <p id="current-weather-code"></p>
+                    <p id="current-cloud-cover" data-translate="Cloud Cover">Cloud Cover</p>
+                </div>
+            </div>
+            <div id="hourly" class="tab-content">
+                <div class="weather-section">
+                    <h2 data-translate="Hourly Weather"><i class="fas fa-clock"></i> Hourly Weather</h2>
+                    <div id="hourly-info"></div>
+                </div>
+            </div>
+            <div id="daily" class="tab-content">
+                <div class="weather-section">
+                    <h2 data-translate="Daily Weather"><i class="fas fa-calendar-day"></i> Daily Weather</h2>
+                    <div id="daily-info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="translation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
